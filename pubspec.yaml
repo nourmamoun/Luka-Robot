@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: 
   flutter_spinkit: ^5.2.0
+  responsive_framework: 
+  firebase_core: ^2.14.0
 
 
 dev_dependencies:

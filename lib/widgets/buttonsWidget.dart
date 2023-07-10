@@ -8,8 +8,9 @@ import 'package:luka_robot/screens/informationPage.dart';
 import '../constants.dart';
 
 class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({super.key, required this.buttonText});
+  const ButtonWidget({super.key, required this.buttonText, this.width});
 final String buttonText;
+final double? width;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -21,7 +22,7 @@ final String buttonText;
         child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                   margin: const EdgeInsets.only(right: 21),
-                  
+                  width: width,
                         decoration:const BoxDecoration(
                           color: Color(kThemeColor),
                           borderRadius: BorderRadius.only(
@@ -47,9 +48,9 @@ final String buttonText;
   }
 }
 class ButtonWidget2 extends StatelessWidget {
-  const  ButtonWidget2({super.key,required this.buttonText2});
+  const  ButtonWidget2({super.key,required this.buttonText2,required this.width});
 final String buttonText2;
-
+final double width;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -60,9 +61,9 @@ final String buttonText2;
           Navigator.of(context).push(MaterialPageRoute(builder: (context)=> InfoPage()));
         },
         child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 19,vertical: 10),
                    margin: const EdgeInsets.only(left: 22),
-      
+                  width: width,
                   
                         decoration: const BoxDecoration(
                           color: Color(kThemeColor),

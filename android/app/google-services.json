@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "692750707144",
+    "firebase_url": "https://luka-a2f04-default-rtdb.firebaseio.com",
+    "project_id": "luka-a2f04",
+    "storage_bucket": "luka-a2f04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692750707144:android:94ac51123be81b1b5578fd",
+        "android_client_info": {
+          "package_name": "com.example.luka_robot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692750707144-cspv7cgrdt1r0bqg9mfc9j11o74gtgjj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWeYCpIfbrg-5KgSC2rNqz6R45lNkHVPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692750707144-cspv7cgrdt1r0bqg9mfc9j11o74gtgjj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "692750707144-j8d48lllehftvfohg9q93jklvrp6njnn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.lukaRobot"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

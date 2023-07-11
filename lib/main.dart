@@ -1,14 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:luka_robot/constants.dart';
 import 'package:luka_robot/screens/startPage.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'firebase_options.dart';
 
 
 
-void main()  {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // Firebase.initializeApp();
+void main()  async {
+ WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

@@ -26,7 +26,7 @@ class _WeeklyFocusedActivityState extends State<WeeklyFocusedActivity> {
     void initState() {
     super.initState();
 
-    Future.delayed(Duration(seconds: 3)).then((value) {
+    Future.delayed(Duration(seconds: 5)).then((value) {
       setState(() {
         _isLoading=false;
       });
@@ -35,6 +35,7 @@ class _WeeklyFocusedActivityState extends State<WeeklyFocusedActivity> {
 
   Widget TableRowContainer({required Map data}) {
     return Container(
+      
       height: 35,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -84,9 +85,8 @@ class _WeeklyFocusedActivityState extends State<WeeklyFocusedActivity> {
   @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
-      color: Color(kThemeColor),
       inAsyncCall: _isLoading,
-
+      color: Color(kThemeColor),
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
@@ -159,11 +159,14 @@ class _WeeklyFocusedActivityState extends State<WeeklyFocusedActivity> {
                       query: dbRef,
                        itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
                         
+                       
                           Map dataInfo = snapshot.value as Map;
                         
                           dataInfo["key"] = snapshot.key;
                           return TableRowContainer(data: dataInfo);
-
+    
+                         
+    
                        }),
                 ),
               ),

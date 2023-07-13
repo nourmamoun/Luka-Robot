@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -10,8 +11,61 @@ import 'package:luka_robot/widgets/squaretile.dart';
 
 import '../constants.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+   final Function()? onTap;
+
+   LoginPage({super.key,required this.onTap});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+final emaillController = TextEditingController();
+final PasswordController = TextEditingController();
+
+
+void signUserIn() async{
+  showDialog(context: context, builder: (context){
+    return Center(
+      child: CircularProgressIndicator(),
+    );
+  });
+
+
+
+  try {
+  await FirebaseAuth.instance.signInWithEmailAndPassword(
+    email: emaillController.text, 
+    password: PasswordController.text);
+    Navigator.pop(context);
+} on FirebaseAuthException catch (e) {
+    Navigator.pop(context);
+  if(e.code=='user-not-found'){
+  scaffoldMessages(
+        context, 'wrong email or password', Colors.red);
+
+
+
+  }else if(e.code == 'wrong-password'){
+    scaffoldMessages(context,
+         'wrong password please try again', Colors.red);
+  }
+}
+
+    
+}
+
+
+void scaffoldMessages(BuildContext context, String message, Color bgColor ){
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text(
+      message,
+      style: TextStyle(color: Colors.white),
+    ),
+    backgroundColor: bgColor,
+   ) );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +97,7 @@ class LoginPage extends StatelessWidget {
                   height: 100,
                 ),
                 TextFieldWidget(
+                  controller: emaillController,
                   hintText: 'Enter Your Email',
                   obsecureText: false,
                 ),
@@ -50,6 +105,7 @@ class LoginPage extends StatelessWidget {
                   height: 30,
                 ),
                 TextFieldWidget(
+                  controller: PasswordController,
                   hintText: 'Enter Your Password',
                   obsecureText: true,
                   redEye:const ImageIcon(
@@ -81,9 +137,7 @@ class LoginPage extends StatelessWidget {
                   height: 30,
                 ),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomePage()));
-                  },
+                  onTap: signUserIn,
                   child: Container(
                     padding:const EdgeInsets.symmetric(horizontal: 160,vertical: 20),
                     decoration: BoxDecoration(
@@ -165,9 +219,7 @@ class LoginPage extends StatelessWidget {
 
 
                   GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>RegisterationPage()));
-                    },
+                    onTap: widget.onTap,
                     child: const Text("Register Now", 
                     style: TextStyle(
                       color: Color(kThemeColor),

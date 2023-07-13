@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:luka_robot/screens/LoginPage.dart';
 import 'package:luka_robot/screens/informationPage.dart';
+import 'package:luka_robot/services/authPage.dart';
 
 import '../constants.dart';
 
@@ -17,7 +18,7 @@ final double? width;
       alignment: Alignment.centerLeft,
       child: GestureDetector(
         onTap: (){
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> LoginPage()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> AuthPage()));
         },
         child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),

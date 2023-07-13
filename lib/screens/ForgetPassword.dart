@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:luka_robot/constants.dart';
 import 'package:luka_robot/screens/LoginPage.dart';
+import 'package:luka_robot/services/authPage.dart';
 import 'package:luka_robot/widgets/BackButton.dart';
 import 'package:luka_robot/widgets/TextFieldWidget.dart';
 
@@ -96,7 +97,7 @@ class ForgetPassword extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LoginPage()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AuthPage()));
                     },
                     child: const Text("Login", 
                     style: TextStyle(

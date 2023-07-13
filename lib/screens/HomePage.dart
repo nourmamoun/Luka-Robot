@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -10,7 +11,9 @@ import 'package:luka_robot/widgets/homePageButtons.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
+void signUserout(){
+  FirebaseAuth.instance.signOut();
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +26,11 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BackButtonWidget(imagePath: kBackButtonImage),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children:[IconButton(onPressed: signUserout, 
+                      icon: Icon(Icons.logout_rounded,size: 30,),color: Color(kThemeColor),),
+                    ]) ,
                      const Padding(
                   padding: EdgeInsets.only(left: 24, right: 40, top: 20),
                   child: Text(

@@ -5,16 +5,18 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import '../constants.dart';
 
 class TextFieldWidget extends StatelessWidget {
-   TextFieldWidget({super.key, this.hintText,this.obsecureText, this.redEye});
+   TextFieldWidget({super.key, this.hintText,this.obsecureText, this.redEye, this.controller, this.keyboardType});
 final hintText;
 final obsecureText;
  ImageIcon? redEye;
-
+ final controller;
+TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
                 obscureText: obsecureText,
-              
+              keyboardType: keyboardType,
                 decoration: InputDecoration(
                   
                   focusedBorder: OutlineInputBorder(

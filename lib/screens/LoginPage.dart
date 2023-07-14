@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:luka_robot/screens/ForgetPassword.dart';
 import 'package:luka_robot/screens/HomePage.dart';
 import 'package:luka_robot/screens/registerPage.dart';
+import 'package:luka_robot/services/googleAuth.dart';
 import 'package:luka_robot/widgets/BackButton.dart';
 import 'package:luka_robot/widgets/TextFieldWidget.dart';
 import 'package:luka_robot/widgets/squaretile.dart';
@@ -189,18 +190,16 @@ void scaffoldMessages(BuildContext context, String message, Color bgColor ){
                 ),
               ),
 
-               SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   SquareTile(ImagePath: 'lib/assets/images/facebook_ic.png'),
-                   SquareTile(ImagePath: 'lib/assets/images/google_ic.png'),
-                   SquareTile(ImagePath: 'lib/assets/images/cib_apple.png')
+               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                 SquareTile(ImagePath: 'lib/assets/images/google_ic.png',onTap: () => AuthServices().signInWithGoogle(),),
+                 SquareTile(ImagePath: 'lib/assets/images/cib_apple.png', onTap: () {
+                   
+                 },)
                
-                  ],
-                             ),
-               ),
+                ],
+                           ),
                const SizedBox(height: 20,),
 
                Row(

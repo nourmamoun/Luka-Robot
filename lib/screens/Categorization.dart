@@ -24,7 +24,7 @@ class Categorization extends StatelessWidget {
                   const Padding(
                   padding: EdgeInsets.only(left: 40, right: 50, top: 20),
                   child: Text(
-                    'THE MOST FOCUSED ACTIVITY',
+                    'YOUR CHILD IS CATEGORIZED',
                     style: TextStyle(
                       fontSize: 27,
                       fontFamily: kFontFamilyGraduate,
@@ -76,7 +76,7 @@ class Categorization extends StatelessWidget {
                   height: 117,
                 ),
 
-                Image.asset(kHalfRobot,width: 500,)
+                Image.asset(kHalfRobot,height: 250, alignment: Alignment.bottomCenter,)
 
                 ],
 

@@ -76,7 +76,8 @@ class MostFocusedActivity extends StatelessWidget {
                   height: 117,
                 ),
 
-                Image.asset(kHalfRobot,width: 500,)
+                Image.asset(kHalfRobot,  height: 250,  alignment: Alignment.bottomCenter,
+)
 
                 ],
 

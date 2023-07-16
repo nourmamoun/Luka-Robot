@@ -6,6 +6,7 @@ import 'package:luka_robot/constants.dart';
 import 'package:luka_robot/screens/Categorization.dart';
 import 'package:luka_robot/screens/mostFocusedActivity.dart';
 import 'package:luka_robot/screens/weeklyFocusedActivity.dart';
+import 'package:luka_robot/services/googleAuth.dart';
 import 'package:luka_robot/widgets/BackButton.dart';
 import 'package:luka_robot/widgets/homePageButtons.dart';
 
@@ -14,10 +15,14 @@ class HomePage extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser!;
   void signUserout() {
     FirebaseAuth.instance.signOut();
+    AuthServices().signOutGoogle();
   }
 
   @override
   Widget build(BuildContext context) {
+    final screenContainerWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -27,6 +32,7 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.only(top: 14,right: 14,left: 14),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 Text(
@@ -93,10 +99,13 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              Image.asset(
-                kHalfRobot,
-                height: 250,
-                alignment: Alignment.bottomCenter,
+              Center(
+                child: Image.asset(
+                  kHalfRobot,
+                  height: screenHeight*0.35,
+                  width: screenContainerWidth*0.8,
+                  alignment: Alignment.bottomCenter,
+                ),
               ),
             ],
           ),

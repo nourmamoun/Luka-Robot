@@ -94,6 +94,7 @@ class _WeeklyFocusedActivityState extends State<WeeklyFocusedActivity> {
           padding: const EdgeInsets.all(14),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BackButtonWidget(imagePath: kBackButtonImage),
               const Padding(
@@ -112,7 +113,7 @@ class _WeeklyFocusedActivityState extends State<WeeklyFocusedActivity> {
               ),
               Table(
                 columnWidths: {
-                  0: FixedColumnWidth(245),
+                  0: FixedColumnWidth(255),
                 },
                 border: TableBorder.all(
                     width: 1.0,

@@ -9,6 +9,8 @@ class InfoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+        final screenContainerWidth = MediaQuery.of(context).size.width;
     return Scaffold(
             backgroundColor: Colors.white,
 
@@ -39,10 +41,13 @@ class InfoPage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       height: 1.4),
                 ),
-                Image.asset(
-                  'lib/assets/images/half a robot 1.png',
-                  alignment: Alignment.bottomCenter,
-                  height: 260,
+                Center(
+                  child: Image.asset(
+                    'lib/assets/images/half a robot 1.png',
+                    height: screenHeight*0.345,
+                      width: screenContainerWidth*0.8,
+                      alignment: Alignment.bottomCenter,
+                  ),
                 ),
               ],
             ),

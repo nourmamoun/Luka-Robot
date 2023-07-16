@@ -97,6 +97,7 @@ void scaffoldMessages(BuildContext context, String message, Color bgColor ){
             scrollDirection: Axis.vertical,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 
                 const Padding(

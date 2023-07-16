@@ -22,9 +22,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
 final emaillController = TextEditingController();
 final PasswordController = TextEditingController();
-
 
 void signUserIn() async{
   showDialog(context: context, builder: (context){
@@ -70,6 +70,7 @@ void scaffoldMessages(BuildContext context, String message, Color bgColor ){
 
   @override
   Widget build(BuildContext context) {
+    final screenContainerWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -78,6 +79,7 @@ void scaffoldMessages(BuildContext context, String message, Color bgColor ){
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                  BackButtonWidget(imagePath: kBackButtonImage)
@@ -137,29 +139,32 @@ void scaffoldMessages(BuildContext context, String message, Color bgColor ){
                 const SizedBox(
                   height: 30,
                 ),
-                GestureDetector(
-                  onTap: signUserIn,
-                  child: Container(
-                    padding:const EdgeInsets.symmetric(horizontal: 160,vertical: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                       color: const Color(kThemeColor),
-                    ),
-                   
-                    child: const Text(
-                      'LOGIN', style: TextStyle(
-                        fontSize: 15,
-                        fontFamily: kFontFamilyUbranist,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                        
+                Center(
+                  child: GestureDetector(
+                    onTap: signUserIn,
+                    child: Container(
+                      width: screenContainerWidth*0.95,
+                      padding:const EdgeInsets.symmetric(horizontal: 160,vertical: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                         color: const Color(kThemeColor),
+                      ),
+                     
+                      child: const Text(
+                        'LOGIN', style: TextStyle(
+                          fontSize: 15,
+                          fontFamily: kFontFamilyUbranist,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                          
+                        ),
                       ),
                     ),
                   ),
                 ),
-
+            
                 const SizedBox(height: 35,),
-
+            
                 Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
@@ -189,7 +194,7 @@ void scaffoldMessages(BuildContext context, String message, Color bgColor ){
                   ],
                 ),
               ),
-
+            
                Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -201,7 +206,7 @@ void scaffoldMessages(BuildContext context, String message, Color bgColor ){
                 ],
                            ),
                const SizedBox(height: 20,),
-
+            
                Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -212,11 +217,11 @@ void scaffoldMessages(BuildContext context, String message, Color bgColor ){
                     fontWeight: FontWeight.w600,
                     
                   ),),
-
-
+            
+            
                  const SizedBox(width: 5,),
-
-
+            
+            
                   GestureDetector(
                     onTap: widget.onTap,
                     child: const Text("Register Now", 

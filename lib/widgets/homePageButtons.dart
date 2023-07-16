@@ -9,15 +9,19 @@ class HomePageButtons extends StatelessWidget {
    HomePageButtons({super.key, required this.text,required this.ontap});
 String text;
 final ontap;
+
   @override
   Widget build(BuildContext context) {
+    final screenContainerWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.all(5),
       child: GestureDetector(
         onTap: ontap,
         child: Container(
+          width: screenContainerWidth*0.9,
           padding:const EdgeInsets.symmetric(horizontal: 90,vertical: 20),
-          width: 400,
+          // width: 400,
           height: 60,
           decoration: BoxDecoration(
             color: Colors.white,

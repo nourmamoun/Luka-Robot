@@ -1,16 +1,12 @@
-# luka_robot
+# Ruka Robot
 
-A new Flutter project.
+**Luka Robot** is a mobile application designed for parents of children with ADHD. The app includes various activities aimed at helping children progress. It also provides a log that records and sends a history of the child's activities and progress.
 
-## Getting Started
+**This App Contains:- **
+1. **Firebase Integration**:
+   - Authentication for secure login to ensure safety integration
+   - Data handling and storage are seamless with Firebase integration.
+2. **Responsive UI**:  
+   - Easy to use interface for users
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Proud to announce that this app won the First Place Prize and was part of the IEEE IC SIT 2023 international competition, showcasing its potential and innovation.
